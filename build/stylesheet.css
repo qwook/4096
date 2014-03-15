@@ -1,0 +1,173 @@
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  -ms-animation-name: pulse;
+  -moz-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 0.25s;
+  -ms-animation-duration: 0.25s;
+  -moz-animation-duration: 0.25s;
+  animation-duration: pulse;
+  -webkit-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  animation-timing-function: pulse;
+}
+body {
+  margin: 50px auto;
+  width: 480px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+h1 {
+  display: inline-block;
+  font-size: 40pt;
+  margin: 0 0 20px 0;
+  line-height: 25pt;
+}
+p {
+  color: #323232;
+}
+hr {
+  border: 0;
+  border-bottom: 1px solid #c8c8c8;
+  margin: 20px 0;
+}
+a {
+  color: #5ed3ce;
+  text-decoration: none;
+}
+a:hover {
+  color: #2c9f9a;
+  text-decoration: underline;
+}
+#game {
+  margin: 50px 0;
+}
+.grid {
+  position: relative;
+}
+.row {
+  clear: both;
+  width: 480px;
+  height: 60px;
+}
+.square,
+.block {
+  border-radius: 6px;
+  display: inline-block;
+  float: left;
+  margin: 5px;
+}
+.square {
+  border: 1px solid #e6e6e6;
+  margin: 5px;
+  width: 48px;
+  height: 48px;
+}
+.block {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: #5ec8f2;
+  transition: top 0.25s, left 0.25s;
+  font-weight: 900;
+  font-size: 20pt;
+  line-height: 50px;
+  text-align: center;
+  box-shadow: inset 0px -3px rgba(0, 0, 0, 0.25);
+}
+.block-1024,
+.block-2048,
+.block-4096 {
+  font-size: 12pt;
+}
+.block-8 {
+  background: #5ed0d5;
+}
+.block-16 {
+  background: #5ed9b8;
+}
+.block-32 {
+  background: #5ee19b;
+}
+.block-64 {
+  background: #5eea7e;
+}
+.block-128 {
+  background: #5ef261;
+}
+.block-256 {
+  background: #282828;
+  color: #f0f0f0;
+}
+.block-512 {
+  background: #9eae47;
+}
+.block-1024 {
+  background: #bf8c39;
+}
+.block-2048 {
+  background: #df6a2c;
+}
+.block-4096 {
+  background: #ff481f;
+}
+.score {
+  background: black;
+  color: white;
+  float: right;
+  padding: 10px;
+  font-weight: 900;
+}
+.gameover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.gameover h1 {
+  line-height: 40pt;
+}
+.gameover .inner {
+  background: #ffffff;
+  width: 200px;
+  padding: 20px;
+  margin: 100px auto;
+}
+.gameover .retry {
+  background: #5ed3ce;
+  color: white;
+  padding: 5px;
+}
