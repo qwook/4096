@@ -8,7 +8,7 @@ function Block(game)
 
     var blocks = game.dom.getElementsByClassName("blocks")[0];
     blocks.appendChild(this.dom);
-    this.dom.innerText = this.val;
+    this.dom.innerHTML = this.val;
 
     this.x = 0;
     this.y = 0;
@@ -37,7 +37,8 @@ Block.prototype.destroy = function()
 Block.prototype.setVal = function(val)
 {
     this.val = val;
-    this.dom.innerText = val;
+    this.dom.innerHTML = val;
+    this.dom.textContent = val;
     this.dom.className = "pulse block block-" + val;
 }
 

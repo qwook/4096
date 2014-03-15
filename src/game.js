@@ -33,7 +33,7 @@ Game.prototype.addScore = function(score)
     for (i in eles)
     {
         var scoreDom = eles[i];
-        scoreDom.innerText = this.score;
+        scoreDom.innerHTML = this.score;
     }
 }
 
@@ -56,7 +56,7 @@ Game.prototype.reset = function()
     for (i in eles)
     {
         var scoreDom = eles[i];
-        scoreDom.innerText = this.score;
+        scoreDom.innerHTML = this.score;
     }
 
     this.moved = 0;
@@ -319,6 +319,7 @@ Game.prototype.hasNeighbors = function(x, y)
     var block = this.getBlocksAt(x, y)[0];
 
     if (!block) return true;
+    if (block.getVal() == 256) return false;
 
     var block1 = this.getBlocksAt(x+1, y)[0];
     var block2 = this.getBlocksAt(x-1, y)[0];
@@ -337,7 +338,6 @@ Game.prototype.isGameOver = function()
     {
         for (var y = 0; y < 8; y++)
         {
-            console.log(x, y);
             if (this.hasNeighbors(x, y)) {
                 return false;
             }
