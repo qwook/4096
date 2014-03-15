@@ -1,0 +1,198 @@
+
+@import 'animation.less';
+
+@size: 50px;
+@margin: 5px;
+
+@color1: rgb(94, 200, 242);
+@color2: rgb(94, 242, 97);
+@color3: rgb(255, 72, 31);
+
+body
+{
+    margin: 50px auto;
+    width: @size*8 + @margin*2*8;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1
+{
+    display: inline-block;
+    font-size: 40pt;
+    margin: 0 0 20px 0;
+    line-height: 25pt;
+}
+
+p
+{
+    color: rgb(50, 50, 50);
+}
+
+hr
+{
+    border: 0;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    margin: 20px 0;
+}
+
+a
+{
+    color: mix(@color2, @color1, 25%);
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: darken(mix(@color2, @color1, 25%), 20%);
+    text-decoration: underline;
+}
+
+#game
+{
+    margin: 50px 0;
+}
+
+.grid
+{
+    // border-radius: 6px;
+    // background: rgb(250, 250, 250);
+    position: relative;
+}
+
+.row
+{
+    clear: both;
+    width: @size*8 + @margin*2*8;
+    height: @size + @margin*2;
+}
+
+.square, .block
+{
+    border-radius: 6px;
+    display: inline-block;
+    float: left;
+    margin: @margin;
+}
+
+.square
+{
+    border: 1px solid rgb(230, 230, 230);
+    margin: @margin;
+    width: @size - 2;
+    height: @size - 2;
+}
+
+.block
+{
+    width: @size;
+    height: @size;
+    position: absolute;
+    background: rgb(94, 200, 242);
+    transition: top 0.25s, left 0.25s;
+    font-weight: 900;
+    font-size: 20pt;
+    line-height: 50px;
+    text-align: center;
+    box-shadow: inset 0px -3px rgba(0, 0, 0, 0.25);
+}
+
+.block-1024, .block-2048, .block-4096
+{
+    font-size: 12pt;
+}
+
+.block-8
+{
+    background: mix(@color2, @color1, 100/5 * 1%);
+}
+
+.block-16
+{
+    background: mix(@color2, @color1, 100/5 * 2%);
+}
+
+.block-32
+{
+    background: mix(@color2, @color1, 100/5 * 3%);
+}
+
+.block-64
+{
+    background: mix(@color2, @color1, 100/5 * 4%);
+}
+
+.block-128
+{
+    background: mix(@color2, @color1, 100/5 * 5%);
+}
+
+.block-256
+{
+    // background: mix(@color3, @color2, 100/5 * 1%);
+    background: rgb(40, 40, 40);
+    color: rgb(240, 240, 240);
+}
+
+// kept for legacy
+
+.block-512
+{
+    background: mix(@color3, @color2, 100/5 * 2%);
+}
+
+.block-1024
+{
+    background: mix(@color3, @color2, 100/5 * 3%);
+}
+
+.block-2048
+{
+    background: mix(@color3, @color2, 100/5 * 4%);
+}
+
+.block-4096
+{
+    background: mix(@color3, @color2, 100/5 * 5%);
+}
+
+.score
+{
+    background: black;
+    color: white;
+    float: right;
+    padding: 10px;
+    font-weight: 900;
+    .scorenum
+    {
+
+    }
+}
+
+.gameover
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.25s;
+    h1
+    {
+        line-height: 40pt;
+    }
+    .inner
+    {
+        background: rgb(255, 255, 255);
+        width: 200px;
+        padding: 20px;
+        margin: 100px auto;
+    }
+    .retry
+    {
+        background: mix(@color2, @color1, 25%);
+        color: white;
+        padding: 5px;
+    }
+}

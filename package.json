@@ -1,0 +1,17 @@
+{
+  "name": "4096",
+  "version": "0.0.0",
+  "description": "2048 browser game clone",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "qwook",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "browserify": "~3.32.1",
+    "grunt-browserify": "~1.3.2",
+    "grunt-contrib-watch": "~0.6.0",
+    "grunt-contrib-less": "~0.10.0"
+  }
+}
