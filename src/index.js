@@ -39,8 +39,20 @@ document.onkeydown = function(e)
 }
 
 // credits to original 2048. this is something that I probably could have figured out but didn't have the time to.
+if (window.navigator.msPointerEnabled) {
+//Internet Explorer 10 style
+this.eventTouchstart    = "MSPointerDown";
+this.eventTouchmove     = "MSPointerMove";
+this.eventTouchend      = "MSPointerUp";
+} else {
+this.eventTouchstart    = "touchstart";
+this.eventTouchmove     = "touchmove";
+this.eventTouchend      = "touchend";
+}
+
 game.dom.addEventListener(this.eventTouchstart, function (event)
 {
+    console.log("HI!")
 
     if ((!window.navigator.msPointerEnabled && event.touches.length > 1) ||
         event.targetTouches > 1) {
